@@ -23,7 +23,9 @@ This is useful if other programs want to control the game, for example to load a
 Send the following text messages to the WebSocket server to interact with the game:
 
 `ping` - Sends "pong" back. Can be used to check if the server is running.
+
 `play <file path>`: Load and play a custom map from the specified file path.
+
 `play_beatball <file path>`: **Not fully implemented yet** - Load and play a custom Beatball map from the specified file path.
 
 ## Credits
