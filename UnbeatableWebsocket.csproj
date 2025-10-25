@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>UnbeatableWebsocket</AssemblyName>
+        <Product>My first plugin</Product>
+        <Version>1.0.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+        <RootNamespace>UnbeatableWebsocket</RootNamespace>
+
+        <GamePath>Q:\Programme\Steam\steamapps\common\UNBEATABLE Demo</GamePath>
+
+        <ManagedPath>$(GamePath)\UNBEATABLE [DEMO]_Data\Managed</ManagedPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.*"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
+        <PackageReference Include="UnityEngine.Modules" Version="2022.3.41" IncludeAssets="compile" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>$(ManagedPath)\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="DOTween">
+            <HintPath>$(ManagedPath)\DOTween.dll</HintPath>
+        </Reference>
+        <Reference Include="FMODUnity">
+            <HintPath>$(ManagedPath)\FMODUnity.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>$(ManagedPath)\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="Rewired_Core">
+            <HintPath>$(ManagedPath)\Rewired_Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>$(ManagedPath)\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>$(ManagedPath)\UnityEngine.UI.dll</HintPath>
+        </Reference>
+
+        <Reference Include="websocket-sharp">
+            <HintPath>Lib\websocket-sharp.dll</HintPath>
+        </Reference>
+        
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="COPY &quot;$(TargetPath)&quot; &quot;$(GamePath)\BepInEx\plugins\UnbeatableWebsocket&quot;"/>
+        <Exec Command="COPY &quot;Lib\websocket-sharp.dll&quot; &quot;$(GamePath)\BepInEx\plugins\UnbeatableWebsocket&quot;"/>
+    </Target>
+</Project>
