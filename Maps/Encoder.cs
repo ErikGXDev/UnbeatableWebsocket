@@ -2,7 +2,7 @@
 
 using System.IO;
 
-namespace UnbeatableSongHack.CustomMaps
+namespace UnbeatableWebsocket.Maps
 {
     class Encoder
     {

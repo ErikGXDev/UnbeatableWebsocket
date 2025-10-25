@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 using Arcade.UI.SongSelect;
 using BepInEx.Logging;
 using Rhythm;
-using UnbeatableSongHack.CustomMaps;
 using UnityEngine;
 using static Arcade.UI.SongSelect.ArcadeSongDatabase;
 

@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using BepInEx.Logging;
-using UnbeatableWebsocket;
-using UnbeatableWebsocket.Maps;
 using UnityEngine;
 using static Arcade.UI.SongSelect.ArcadeSongDatabase;
 
 
-namespace UnbeatableSongHack.CustomMaps
+namespace UnbeatableWebsocket.Maps
 {
 
 
