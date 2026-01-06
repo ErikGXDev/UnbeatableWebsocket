@@ -14,9 +14,9 @@
         </RestoreAdditionalProjectSources>
         <RootNamespace>UnbeatableWebsocket</RootNamespace>
 
-        <GamePath>Q:\Programme\Steam\steamapps\common\UNBEATABLE Demo</GamePath>
+        <GamePath>Q:\Programme\Steam\steamapps\common\UNBEATABLE</GamePath>
 
-        <ManagedPath>$(GamePath)\UNBEATABLE [DEMO]_Data\Managed</ManagedPath>
+        <ManagedPath>$(GamePath)\UNBEATABLE_Data\Managed\</ManagedPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -30,24 +30,31 @@
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
             <HintPath>$(ManagedPath)\Assembly-CSharp.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="DOTween">
             <HintPath>$(ManagedPath)\DOTween.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="FMODUnity">
             <HintPath>$(ManagedPath)\FMODUnity.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="Newtonsoft.Json">
             <HintPath>$(ManagedPath)\Newtonsoft.Json.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="Rewired_Core">
             <HintPath>$(ManagedPath)\Rewired_Core.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="Unity.TextMeshPro">
             <HintPath>$(ManagedPath)\Unity.TextMeshPro.dll</HintPath>
+            <Private>False</Private>
         </Reference>
         <Reference Include="UnityEngine.UI">
             <HintPath>$(ManagedPath)\UnityEngine.UI.dll</HintPath>
+            <Private>False</Private>
         </Reference>
 
         <Reference Include="websocket-sharp">

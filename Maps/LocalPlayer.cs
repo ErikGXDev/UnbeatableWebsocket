@@ -110,7 +110,7 @@ namespace UnbeatableWebsocket.Maps
                 beatmapItem.BeatmapInfo = new BeatmapInfo(null, "Beginner");
 
 
-                beatmapItem.Highscore = new HighScoreItem(key, 0, 0f, 0, cleared: false, new Dictionary<string, int>(), Modifiers.None);
+                //beatmapItem.Highscore = new HighScoreItem(key, 0, 0f, 0, cleared: false, new Dictionary<string, int>(), Modifiers.None);
 
 
                 beatmapItem.Beatmap = new Beatmap();

@@ -12,7 +12,7 @@ namespace UnbeatableWebsocket.Maps
         public static string dataSeparator = "%";
 
         // Custom indicator to identify custom songs in other parts of the code
-        public static string customPathIndicator = "__CUSTOM";
+        public static string customPathIndicator = "__WSCUSTOM";
 
 
         public static string NormalizePath(string path)

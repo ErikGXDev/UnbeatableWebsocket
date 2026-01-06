@@ -88,11 +88,7 @@ namespace UnbeatableWebsocket.Maps
             beatmapItem.BeatmapInfo = new BeatmapInfo(textAsset, difficulty);
 
 
-            if (ArcadeSongDatabase.Instance)
-            {
-                beatmapItem.Highscore =
-                    ArcadeSongDatabase.Instance.HighScores.GetScoreItem(mapDataName + "/" + difficulty);
-            }
+        
 
             Plugin.Logger.LogInfo(
                 "Read beatmap : " + beatmapItem.Beatmap.metadata.title + " - " + difficulty);

@@ -34,20 +34,17 @@ namespace UnbeatableWebsocket.Maps
             }
             return true;
         }
-        
-
 
         // Make the game play local files
         [HarmonyPatch(typeof(RhythmTracker), "PrepareInstance", new Type[] { typeof(EventInstance), typeof(PlaySource), typeof(string) })]
         [HarmonyPrefix]
         public static bool PrepareInstancePatch(EventInstance instance, ref PlaySource source, ref string key)
         {
-            if (key.StartsWith("__CUSTOM") && key.Contains("."))
+            if (key.StartsWith(Encoder.customPathIndicator) && key.Contains("."))
             {
 
                 key = Encoder.DecodeAudioName(key);
-
-
+                
                 if (File.Exists(key))
                 {
                     Plugin.Logger.LogInfo("Loading custom audio: " + key);
