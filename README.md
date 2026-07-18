@@ -11,7 +11,7 @@ This is useful if other programs want to control the game, for example to load a
 
 ## Installation
 
-1. Download and install BepInEx 5 into your UNBEATABLE game directory. (If you have this already, skip to step 3)
+1. Download and install [BepInEx 5](https://docs.bepinex.dev/articles/user_guide/installation/index.html) into your UNBEATABLE game directory. (If you have this already, skip to step 3)
 2. Run the game, then close it
 3. [Download this mod](https://github.com/ErikGXDev/UnbeatableWebsocket/releases)
 4. Merge the BepInEx folder from this mod with the BepInEx folder in your game directory
