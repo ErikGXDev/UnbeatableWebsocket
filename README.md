@@ -1,4 +1,6 @@
-﻿# Unbeatable Websocket
+<p id="readme-start"></p>
+ 
+ # Unbeatable Websocket
 
 This mod for UNBEATABLE adds support for WebSocket communication with the game.
 
