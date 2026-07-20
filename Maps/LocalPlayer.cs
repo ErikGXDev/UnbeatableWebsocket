@@ -15,46 +15,53 @@ namespace UnbeatableWebsocket.Maps
         // "Progessions" are some kind of class 
         // that determine how the game behaves in stages
         // They are used to load the beatmap and the audio
-        public class CustomProgression : IProgression
+        public class CustomProgression : ArcadeProgression
         {
-            public string stageScene = "TrainStationRhythm";
+            public new string stageScene = "TrainStationRhythm";
 
             public BeatmapItem beatmapItem;
 
-            public CustomProgression(BeatmapItem beatmapItem)
+            public CustomProgression(BeatmapItem beatmapItem, string chartPath)
+                : base(beatmapItem.Path, RhythmGameType.ArcadeMode)
             {
                 this.beatmapItem = beatmapItem;
 
                 this.stageScene = "TrainStationRhythm";
+
+                isCustomChart = true;
+
+                customChartPath = chartPath;
+
+                var mapDir = Encoder.DecodeMapName(beatmapItem.Path);
+                var audioFilename = beatmapItem.Beatmap.general.audioFilename;
+                customAudioPath = System.IO.Path.Combine(mapDir, audioFilename);
             }
 
-            public string GetBeatmapPath()
+            public new string GetBeatmapPath()
             {
-                // Placeholder
                 return beatmapItem.Path;
             }
-            public string GetSongName()
+            public new string GetSongName()
             {
                 return beatmapItem.Song.name;
             }
 
-            public string GetDifficulty()
+            public new string GetDifficulty()
             {
-                // Placeholder
                 return "UNBEATABLE";
             }
 
-            public void Finish(string sceneIndex)
+            public new void Finish(string sceneIndex)
             {
                 LevelManager.LoadLevel("ScoreScreenArcadeMode");
             }
 
-            public void Retry()
+            public new void Retry()
             {
                 LevelManager.LoadLevel(stageScene);
             }
 
-            public void Back()
+            public new void Back()
             {
                 LevelManager.LoadLevel(JeffBezosController.arcadeMenuScene);
             }
@@ -70,7 +77,7 @@ namespace UnbeatableWebsocket.Maps
                 return;
             }
 
-            CustomProgression customProgression = new CustomProgression(beatmapItem);
+            CustomProgression customProgression = new CustomProgression(beatmapItem, filePath);
 
             JeffBezosController.rhythmProgression = customProgression;
 

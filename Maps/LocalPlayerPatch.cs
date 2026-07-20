@@ -83,6 +83,20 @@ namespace UnbeatableWebsocket.Maps
 
             return true;
         }
-        
+
+        // Never store scores for websocket test plays
+        [HarmonyPatch(typeof(HighScoreList), "IsScoreSaveable")]
+        [HarmonyPrefix]
+        public static bool IsScoreSaveablePatch(ref bool __result)
+        {
+            if (JeffBezosController.rhythmProgression is LocalPlayer.CustomProgression)
+            {
+                __result = false;
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
