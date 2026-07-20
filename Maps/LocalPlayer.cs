@@ -58,7 +58,7 @@ namespace UnbeatableWebsocket.Maps
 
             public new void Retry()
             {
-                LevelManager.LoadLevel(stageScene);
+                LevelManager.LoadLevel(string.IsNullOrEmpty(stageScene) ? "TrainStationRhythm" : stageScene);
             }
 
             public new void Back()
@@ -77,9 +77,14 @@ namespace UnbeatableWebsocket.Maps
                 return;
             }
 
-            CustomProgression customProgression = new CustomProgression(beatmapItem, filePath);
+            ArcadeProgression customProgression = new CustomProgression(beatmapItem, filePath);
 
             JeffBezosController.rhythmProgression = customProgression;
+
+            if (string.IsNullOrEmpty(customProgression.stageScene))
+            {
+                customProgression.stageScene = "TrainStationRhythm";
+            }
 
             LevelManager.LoadLevel(customProgression.stageScene);
 
