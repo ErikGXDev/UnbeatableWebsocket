@@ -20,7 +20,7 @@ This is useful if other programs want to control the game, for example to load a
 5. Run the game
 6. (For developers:) Use the WebSocket server at `ws://localhost:5080` to communicate with the game
 
-## For the Standalone Editor:
+## For the Standalone Editor
 
 This mod is used by the [Standalone Editor](https://github.com/ErikGXDev/UnbeatableStandaloneEditor#readme-start) to quickly test maps through the editor.
 
